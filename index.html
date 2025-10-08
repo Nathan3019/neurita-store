@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neurita Store</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f5f5f5;
+      color: #333;
+    }
+
+    /* Tela de carregamento */
+    #loader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #111;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      z-index: 9999;
+      transition: opacity 0.5s ease, visibility 0.5s ease;
+    }
+
+    #loader.hidden {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    #loader .spinner {
+      border: 6px solid #444;
+      border-top: 6px solid #00bcd4;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      animation: spin 1s linear infinite;
+      margin-bottom: 15px;
+    }
+
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    header {
+      background: #111;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2em;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 40px;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      max-width: 300px;
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .card h2 {
+      margin: 15px 0 10px;
+    }
+
+    .card p {
+      font-size: 0.95em;
+      margin-bottom: 15px;
+    }
+
+    .card button {
+      background: #00bcd4;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .card button:hover {
+      background: #0097a7;
+    }
+  </style>
+</head>
+<body>
+  <!-- Tela de carregamento -->
+  <div id="loader">
+    <div class="spinner"></div>
+    <p>Carregando Neurita Store...</p>
+  </div>
+
+  <header>
+    <h1>✨ Neurita Store ✨</h1>
+    <p>Armazenamento com inteligência</p>
+  </header>
+
+  <div class="container">
+    <div class="card">
+      <img src="https://i.ibb.co/qYKzP0Mv/fd3e5e91-17ee-4ab5-b0b2-8c8c018820af.png" alt="Pen-Drive Caixa Preta">
+      <h2>Pen-Drive Neurita (Caixa Preta)</h2>
+      <p>Design sofisticado com acabamento fosco. Segurança e velocidade em um só dispositivo.</p>
+      <button>Comprar</button>
+    </div>
+    <div class="card">
+      <img src="https://i.ibb.co/PsVhRgW3/c7eec252-e8d6-4767-bf94-7a886279775b.png" alt="Pen-Drive Caixa Branca">
+      <h2>Pen-Drive Neurita (Caixa Branca)</h2>
+      <p>Minimalismo e elegância. Armazenamento inteligente para o seu dia a dia.</p>
+      <button>Comprar</button>
+    </div>
+  </div>
+
+  <script>
+    // Simular carregamento
+    window.addEventListener("load", () => {
+      const loader = document.getElementById("loader");
+      setTimeout(() => {
+        loader.classList.add("hidden");
+      }, 1000);
+    });
+  </script>
+</body>
+</html>
